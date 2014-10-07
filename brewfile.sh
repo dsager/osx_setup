@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # update
-#brew update
-#brew upgrade
+brew update
+brew upgrade
 
-#brew tap homebrew/dupes
+brew tap homebrew/dupes
 
 formulae=(
 
