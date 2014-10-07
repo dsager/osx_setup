@@ -1,0 +1,55 @@
+alias ll='ls -lFhG'
+alias la='ls -alFhG'
+alias l='ll'
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias -- -="cd -"
+alias cd..='cd ..'
+
+alias db="cd ~/Dropbox"
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias p="cd ~/Projects"
+alias g="git"
+alias j="jobs"
+alias h='history | tail'
+alias hg='history | grep'
+alias p='pwd'
+alias x='exit'
+
+alias sudo='sudo '
+
+alias mv='mv -i'
+alias grep='grep -s --color=auto --exclude-dir=\.svn --exclude-dir=\.git'
+
+alias rsyncdefault="rsync --verbose  --progress --stats --compress --recursive --times --perms --links --delete --exclude \"\.git\""
+alias realpath="python -c 'import os,sys;print os.path.realpath(sys.argv[1])'"
+alias pws="python -m SimpleHTTPServer"
+
+alias grape="cd ~/Work/projects/devex/devex/grape-api"
+alias frontend="cd ~/Work/projects/devex/devex/front-end"
+alias gpdd="git pull devex develop"
+alias gcd="git checkout develop"
+alias gcpd="git checkout develop && git pull devex develop"
+
+alias week='date +%V'
+
+# Stopwatch
+alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
+
+# Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update --system; sudo gem update'
+
+# Clean up LaunchServices to remove duplicates in the “Open With” menu
+alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
+
+# Intuitive map function
+# For example, to list all directories that contain a certain file:
+# find . -name .gitattributes | map dirname
+alias map="xargs -n1"
+
+# Lock the screen (when going AFK)
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
