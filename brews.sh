@@ -1,60 +1,68 @@
-#!/bin/sh
+#!/bin/bash
 
 # update
-brew update
-brew upgrade
+#brew update
+#brew upgrade
 
-# unix tools
-brew install coreutils
-brew install moreutils
-brew install findutils
-brew install bash
-brew install zsh
-brew install gnu-sed --default-names
-brew tap homebrew/dupes
-brew install homebrew/dupes/grep
-echo "remember to update PATH variable:"
-echo " PATH=\$(brew --prefix coreutils)/libexec/gnubin:\$PATH"
+#brew tap homebrew/dupes
 
-# develop
-brew install apple-gcc42
-brew install php55
-brew install redis
-brew install python
-brew install node
-brew install ack
-brew install git
-brew install hub
-brew install postgresql
-brew install sqlite
-brew install jslint4java
-brew install chromedriver
-brew install docker
-brew install boot2docker
+formulae=(
 
-# utilities
-brew install vim --override-system-vi
-brew install tree
-brew install wget --enable-iri
-brew install curl
-brew install grep
-brew install htop-osx
-brew install rename
-brew install ffmpeg
-brew install trash
-brew install ssh-copy-id
-brew install figlet
-brew install mackup
-brew install hicolor-icon-theme
+  # unix tools
+  'coreutils'
+  'moreutils'
+  'findutils'
+  'bash'
+  'zsh'
+  'gnu-sed --default-names'
+  'homebrew/dupes/grep'
 
-## libs
-brew install libxml2
-brew install libxslt
-brew install mhash
-brew install xvid
-brew install lame
-brew install openssl
-brew install imagemagick
+  ## libs
+  'libxml2'
+  'libxslt'
+  'mhash'
+  'xvid'
+  'lame'
+  'openssl'
+  'imagemagick'
+
+  # develop
+  'apple-gcc42'
+  'php55'
+  'redis'
+  'python'
+  'node'
+  'ack'
+  'git'
+  'hub'
+  'jslint4java'
+  'chromedriver'
+  'docker'
+  'boot2docker'
+
+  # utilities
+  'vim --override-system-vi'
+  'tree'
+  'wget --enable-iri'
+  'curl'
+  'grep'
+  'htop-osx'
+  'rename'
+  'ffmpeg'
+  'trash'
+  'ssh-copy-id'
+  'figlet'
+  'mackup'
+  'hicolor-icon-theme'
+)
+
+for ((i=0;i<${#formulae[*]};i++)); do
+  brew install ${formulae[$i]}
+done
 
 # CLEANUP
 brew cleanup
+
+echo ""
+echo "remember to update PATH variable:"
+echo " PATH=\$(brew --prefix coreutils)/libexec/gnubin:\$PATH"

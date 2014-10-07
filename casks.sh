@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# UPDATE
+## UPDATE
 brew update
 brew upgrade
 
@@ -8,60 +8,74 @@ brew upgrade
 brew install caskroom/cask/brew-cask
 
 ## APPS
-brew cask install --appdir="/Applications" alfred
-brew cask install --appdir="/Applications" dropbox
-brew cask install --appdir="/Applications" google-chrome
-brew cask install --appdir="/Applications" firefox
-brew cask install --appdir="/Applications" spotify
-brew cask install --appdir="/Applications" intellij-idea
-brew cask install --appdir="/Applications" vagrant
-brew cask install --appdir="/Applications" screenflick
-brew cask install --appdir="/Applications" appcleaner
-brew cask install --appdir="/Applications" quicklook-json
-brew cask install --appdir="/Applications" qlmarkdown
-brew cask install --appdir="/Applications" flash
-brew cask install --appdir="/Applications" iterm2
-brew cask install --appdir="/Applications" shiori
-brew cask install --appdir="/Applications" virtualbox
-brew cask install --appdir="/Applications" atom
-brew cask install --appdir="/Applications" flux
-brew cask install --appdir="/Applications" mailbox
-brew cask install --appdir="/Applications" caffeine
-brew cask install --appdir="/Applications" vlc
-brew cask install --appdir="/Applications" skype
-brew cask install --appdir="/Applications" transmission
-brew cask install --appdir="/Applications" adium
-brew cask install --appdir="/Applications" dash
-brew cask install --appdir="/Applications" marked
-brew cask install --appdir="/Applications" insync
-brew cask install --appdir="/Applications" google-drive
-brew cask install --appdir="/Applications" bittorrent-sync
-brew cask install --appdir="/Applications" skitch
-brew cask install --appdir="/Applications" gimp
-brew cask install --appdir="/Applications" keepassx
-brew cask install --appdir="/Applications" balsamiq-mockups
-brew cask install --appdir="/Applications" sourcetree
-brew cask install --appdir="/Applications" picasa
-# iawriter
-# wunderlist
-# postman
-# pocket
-# ? filezilla
-# ? Kitematic
-# ? LibreOffice
-# ? MKVtools
-# ? Popcorn-Time
-# ? Steam
-# ? Unarchiver
-# ? TweetDeck
-# ? unetbootin
-# ? XLD
-# ? Android File Transfer
-# ? Amazon MP3 Downloader
-# ? Aquamacs
+apps=(
+  dropbox
+  google-drive
+  insync
+  bittorrent-sync
+  filezilla
+  firefox
+  google-chrome
+  flash
+  shiori
+
+  the-unarchiver
+  alfred
+  spotify
+  mailbox
+  vlc
+  transmission
+  jdownloader
+  skype
+  adium
+  libreoffice
+  steam
+  keepassx
+  onepassword
+  handbrake
+  telephone
+  kindle
+
+  intellij-idea
+  virtualbox
+  vagrant
+  kitematic
+  quicklook-json
+  qlmarkdown
+  iterm2
+  atom
+  dash
+  marked
+  sourcetree
+  aquamacs
+
+  flux
+  appcleaner
+  caffeine
+  screenflick
+  unetbootin
+  xld
+  android-file-transfer
+  skitch
+  gimp
+  picasa
+  balsamiq-mockups
+
+  # not avilable:
+  # iawriter
+  # wunderlist
+  # postman
+  # pocket
+  # mkvtools
+  # popcorn-time
+  # tweetdeck
+)
+for ((i=0;i<${#apps[*]};i++)); do
+  echo "brew cask install --appdir='/Applications' ${apps[$i]}"
+done
 
 ## FONTS
 brew cask install font-meslo-lg-for-powerline
 
-# CLEANUP
+## CLEANUP
 brew cleanup
