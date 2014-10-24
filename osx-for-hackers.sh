@@ -137,15 +137,9 @@ else
   defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
   echo ""
-  echo "Add ability to toggle between Light and Dark mode in Yosemite using ctrl+opt+cmd+t? (y/n)"
+  echo "Add ability to toggle between Light and Dark mode in Yosemite using ctrl+opt+cmd+t"
   # http://www.reddit.com/r/apple/comments/2jr6s2/1010_i_found_a_way_to_dynamically_switch_between/
-  read -r response
-  case $response in
-    [yY])
-      sudo defaults write /Library/Preferences/.GlobalPreferences.plist _HIEnableThemeSwitchHotKey -bool true
-      break;;
-    *) break;;
-  esac
+  sudo defaults write /Library/Preferences/.GlobalPreferences.plist _HIEnableThemeSwitchHotKey -bool true
 
 
   ###############################################################################
@@ -242,19 +236,8 @@ else
   defaults write com.apple.screensaver askForPasswordDelay -int 0
 
   echo ""
-  echo "Where do you want screenshots to be stored? (hit ENTER if you want ~/Desktop as default)"
-  read screenshot_location
-  if [ -z "$1" ]
-  then
-    echo ""
-    echo "Setting location to ~/Desktop"
-    defaults write com.apple.screencapture location -string "$HOME/Desktop"
-  else
-    echo ""
-    echo "Setting location to ~/$screenshot_location"
-    defaults write com.apple.screencapture location -string "$HOME/$screenshot_location"
-  fi
-
+  echo "Setting screenshot location to ~/Desktop"
+  defaults write com.apple.screencapture location -string "$HOME/Desktop"
 
   echo ""
   echo "Setting screenshot format to PNG"
@@ -347,6 +330,7 @@ else
   # Dock & Mission Control
   ###############################################################################
 
+  echo ""
   echo "Wipe all (default) app icons from the Dock? (y/n)"
   echo "(This is only really useful when setting up a new Mac, or if you don't use the Dock to launch apps.)"
   read -r response
@@ -391,7 +375,7 @@ else
   ###############################################################################
 
   echo ""
-  echo "Use `~/Downloads/Incomplete` to store incomplete downloads"
+  echo "Use '~/Downloads/Incomplete' to store incomplete downloads"
   defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
   mkdir -p ~/Downloads/Incomplete
   defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Downloads/Incomplete"
