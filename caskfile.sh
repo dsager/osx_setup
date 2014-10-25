@@ -17,7 +17,6 @@ apps=(
   'firefox'
   'google-chrome'
   'flash'
-  'shiori'
 
   'the-unarchiver'
   'alfred'
