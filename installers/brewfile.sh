@@ -1,13 +1,14 @@
-#!/bin/bash
+#!/bin/sh
 
-# update
+# UPDATE
 brew update
 brew upgrade
 
+# DUPES
 brew tap homebrew/dupes
 
+# APPS
 formulae=(
-
   # unix tools
   'coreutils'
   'moreutils'
@@ -16,6 +17,7 @@ formulae=(
   'zsh'
   'gnu-sed --default-names'
   'homebrew/dupes/grep'
+  'automake'
 
   ## libs
   'libxml2'
@@ -39,6 +41,7 @@ formulae=(
   'chromedriver'
   'docker'
   'boot2docker'
+  'heroku-toolbelt'
 
   # utilities
   'vim --override-system-vi'
@@ -55,14 +58,12 @@ formulae=(
   'mackup'
   'hicolor-icon-theme'
 )
-
 for ((i=0;i<${#formulae[*]};i++)); do
   brew install ${formulae[$i]}
 done
 
+# USE INSTALLED OPENSSL
+brew unlink openssl && brew link openssl --force
+
 # CLEANUP
 brew cleanup
-
-echo ""
-echo "remember to update PATH variable:"
-echo " PATH=\$(brew --prefix coreutils)/libexec/gnubin:\$PATH"
