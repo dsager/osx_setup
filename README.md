@@ -10,6 +10,12 @@ feel free to take over what you like...
 
 The sub scripts in `installers/` can all be run on their own as well.
 
+## Command Line Tools for Xcode
+
+- Get them from https://developer.apple.com/downloads
+- Set the path with `xcode-select --switch /Library/Developer/CommandLineTools`
+- Remove Xcode via app cleaner
+
 ## Acknowledgements
 
 Most of this was copied shamelessly from
