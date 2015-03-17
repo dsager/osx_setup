@@ -1,5 +1,7 @@
 # OSX Setup
 
+**Notice:** Not maintained any more, see [dsager/dotfiles](https://github.com/dsager/dotfiles) instead...
+
 Some stuff to setup and customize OSX. It's opinionated and a constant WIP, but
 feel free to take over what you like...
 
